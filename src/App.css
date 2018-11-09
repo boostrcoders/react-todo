@@ -1,0 +1,131 @@
+* {
+  margin: 0px;
+  box-sizing: border-box;
+}
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+body {
+  background: #f1f1f1;
+  overflow: hidden;
+}
+#root {
+  width: 100%;
+  height: 100%;
+} /* Our App Container */
+.container {
+  padding-bottom: 80px;
+} /* The header */
+.header {
+  font-size: 22px;
+  font-weight: bold;
+  font-style: italic;
+  color: #333;
+  background: #fff;
+  padding: 30px;
+  margin-bottom: 20px;
+} /* The note */
+.note {
+  color: #adadad;
+  margin: 0px 20px;
+  background: #f1f1f1;
+  border: solid 1px #e9e9e9;
+  cursor: pointer;
+  box-shadow: 0px 0px 14px 0px rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: 0px 0px 14px 0px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 0px 0px 14px 0px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease;
+}
+.note div {
+  padding: 20px 0px 20px 20px;
+}
+.done {
+  background: #2c84f7;
+  color: #adadad;
+}
+.delNote {
+  float: right;
+  position: relative;
+  margin-top: -42px;
+  margin-right: 20px;
+  cursor: pointer;
+  color: #adadad;
+}
+.delNote:hover {
+  color: #cc3333;
+}
+.note:hover {
+  transform: scale(1.02);
+} /* The add note button */
+.btn {
+  position: fixed;
+  z-index: 1;
+  right: 9px;
+  bottom: 10px;
+  padding: 18px 22px;
+  border-radius: 100%;
+  text-align: center;
+  font-size: 16px;
+  color: #f1f1f1;
+  background: #2c84f7;
+  cursor: pointer;
+  transform: rotate(45deg);
+  transition: transform 0.06s ease;
+  opacity: 0.8;
+}
+
+.btn:hover {
+  /* transform: scale(1.2); */
+  color: #333;
+  background: #f1f1f1;
+  box-shadow: 0px 0px 11px 0px rgba(0, 0, 0, 0.8);
+  -webkit-box-shadow: 0px 0px 11px 0px rgba(0, 0, 0, 0.8);
+  -moz-box-shadow: 0px 0px 11px 0px rgba(0, 0, 0, 0.8);
+} /* Textinput */
+
+.textInput {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  width: 0px;
+  height: 60px;
+  padding: 10px 30px;
+  border: none;
+  border-radius: 100em;
+  outline: none;
+  background: #333;
+  font-size: 20px;
+  color: #f1f1f1;
+  transition: width 0.3s, right 0.3s, opacity 0.5s ease;
+  opacity: 0;
+}
+
+#toggle {
+  display: none;
+}
+
+.btn:before {
+  content: "\002716";
+}
+#toggle:checked ~ .textInput {
+  width: 100%;
+  right: 0;
+  opacity: 0.5;
+}
+#toggle:checked + .btn {
+  transform: rotate(0deg);
+  background: #929292;
+  opacity: 1;
+}
+#toggle:checked + .btn:hover {
+  color: #cc3333;
+  box-shadow: none;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+}
+#toggle:checked label:before {
+  transform: rotate(45deg);
+  content: "\002716";
+}
